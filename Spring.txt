@@ -1,0 +1,238 @@
+Q1.
+What are the differences between Bean Factory and Application Context?
+Posted by Sharad Jaiswal
+The differences between Bean Factory and Application Context are as follows:
+Bean Factory is an interface defined in org.springframework.beansfactory.BeanFactory, while Application Context is an interface defined, is org.springframework.context.ApplicationContext
+While the former uses lazy initialization the latter uses aggressive initialization
+While the former explicitly provide for resource object using the syntax the latter creates and manages resource objects on its own
+The former doesn’t support internationalization while the latter does.
+The former doesn’t support annotation-based dependency while the latter does.
+ 0
+Q2.
+What do you mean by AOP?
+Posted by Sharad Jaiswal
+AOP or Aspect oriented programming is a technique in programming with the help of which programmers can modularize the crosscutting concerns or change the behavior that cuts across the various divisions of responsibility. Some of the examples of crosscutting concerns are logging well as transaction management. The center of AOP is an aspect. This encapsulates behaviors that can affect multiple classes into modules that can be reused.
+ 0
+Q3.
+What is an Advice?  What are the different types of Advices?
+Posted by Sharad Jaiswal
+An Action, which is taken by any aspect at a particular join point, is called an Advice. AOPs use an advice as an interceptor that maintains a train of interceptors near the join point.
+Various types of advice are as follows:
+Before: These are types of advices, which get executed before the join point methods and can be configured using @Before annotation mark.
+After returning: These are the types of advices which get executed after the join point methods completes executing and the annotation mark used to configure it is @AfterReturning
+After throwing:  These are the types of advices that execute only and only if join point method returns by exiting an exception and annotation mark used to configure it is @AfterThrowing.
+After (finally): These are the types of advices which gets executed after a join point method, not concerning whether the method’s exit normally or exceptional return and it can be configured using @After annotation mark.
+Around: These are the types of advices that get executed before and after a join point and can be configured using the @Around annotation mark.
+ 0
+Q4.
+What do you mean by spring beans?  What does bean scopes spring support? Explain each.
+Posted by Sharad Jaiswal
+The objects, which are most important for the user’s application and are managed by the containers of Spring IoC are called beans. A bean is an object that is initialized, put together, and is managed by a Spring IoC container. The beans are created with the help of configuration metadata that are supplied to the container by the users.
+The Spring Framework makes use of five scopes. Three of these scopes are valid only if it is in the form of a web-aware Application Context.
+
+Singleton: This is the scope that the bean defines to a single instance for each Spring IoC container.
+Prototype: This is the scopes that a bean defines to have any number of object instances.
+Request: This is the scopes that a bean defines as per HTTP requests. This is valid in the form of a web-aware Spring Application Context
+Session: This is the scopes that a bean defines to an HTTP session. This is valid in the form of a web-aware Spring Application Context
+Global-session: This is the scopes that a bean defines to a global HTTP session. This is valid in the form of a web-aware Spring Application Context.
+ 0
+Q5.
+In how many ways, can one configure Spring into an application?
+Posted by Sharad Jaiswal
+One can configure spring into an application using three different ways. They are:
+Using XML Configuration
+Using Annotation configuration
+Using Java configuration
+ 0
+Q6.
+What are the disadvantages of auto wiring?
+Posted by Sharad Jaiswal
+Following are the disadvantages of auto wiring:
+Overriding possibility – Despite using auto wiring one can still use dependencies like <property> and <constructor-arg> settings, which always can override auto wiring.
+Primitive data types − one cannot auto wire some simple properties like classes, strings, and primitives etc.
+Confusing nature – Auto wiring is less exact than explicit wiring and thus it is not preferred if explicit wiring can be used.
+
+ 
+ 0
+Q7.
+What is an Aspect?
+Posted by Sharad Jaiswal
+A module in spring which contains a set of APIs, which provides for crosscutting requirements is an Aspect. For example, a module that is used in logging is called AOP aspect for logging. Any application can have as many aspects as per requirement.
+ 0
+Q8.
+What is a Join point?
+Posted by Sharad Jaiswal
+Join point is a point in an application where one can initialize an AOP aspect. One can also define it as the exact place in the application where an action is said to take place while using spring framework.
+ 0
+Q9.
+What is a bean definition made up of?
+Posted by Sharad Jaiswal
+The bean definition is made of the information called configuration metadata, which is required by the container to have knowledge about the followings −
+How bean can be created
+Details about the bean’s lifecycle
+On what factors Bean’s lifecycle depends
+
+ 0
+Q10.
+What do you mean by Pointcut?
+Posted by Sharad Jaiswal
+Pointcut is a collection of one or more join points where one advice can be executed. One can specify pointcut using patterns as well as expressions.
+ 0
+Q11.
+What does Weaving mean?
+Posted by Sharad Jaiswal
+Weaving is the process by which aspects can be linked with other application objects for creating the required object.
+ 0
+Q12.
+What are the features/ characteristics of spring?
+Posted by Sharad Jaiswal
+The important features of spring are as follows:
+Lightweight: Considering transparency and size, spring is lightweight. The basic versions of spring are below 2MB in size. Also, the overhead processing is also quite negligible.
+Inversion of control (IOC): The objects in spring provide their dependencies instead of creating dependent objects. This is known as Inversion of Control.
+Aspect-oriented Programming (AOP): Aspect-oriented programming or AOP in spring supports cohesive development. Separating application and business logic from system services does this.
+Container: Spring creates as well as manages the life cycle and configures the application objects.
+MVC Framework: Spring’s MVC application framework can be configured easily with the help of strategy interfaces, and it also accommodates multiple view technologies like JSP, POI, and iText. Therefore different frameworks can be used instead of Spring Framework (MVC).
+Transaction Management:  Spring comes with Generic abstraction layer for transaction management. This allows us to add the many transaction managers, which make it easy to making transactions without thinking much about low-level issues.
+JDBC Exception Handling: The abstraction layer JDBC of Spring provides an exception hierarchy, which makes the error handling strategy simple.
+
+ 
+ 0
+Q13.
+How many types of modules are there in spring? Name them.
+Posted by Sharad Jaiswal
+There are around twenty modules, which can be categorized into Core Container, Web, Data Access or Integration, Aspect Oriented Programming and Instrumentation and Test.
+The modules are:
+
+Core module  
+Bean module
+SpEL module
+Context module
+JDBC (Java DataBase Connectivity)
+ORM (Object Relational Mapping)
+OXM (Object XML Mappers)
+JMS (Java Messaging Service)
+Transaction
+Web
+Web MVC
+Web Socket
+Web Portlet
+Aspect Oriented Programming (AOP)
+Instrumentation
+Test
+Messaging
+Aspects
+ 0
+Q14.
+What do you mean by Spring Java Based Configuration?
+Posted by Sharad Jaiswal
+Spring configuration files are XML files. These files contain the information of classes and describe how these classes can be configured and merged to each other. Java based configuration is a feature which enables the user to write most of their spring configuration without using XML. Instead, they are written with the help Java-based annotations.
+For example, Java Annotation @Configuration is used to indicate that Spring IoC container can use the class, which is a source of bean definitions.
+
+ 0
+Q15.
+What are the advantages of spring?
+Posted by Sharad Jaiswal
+There are many advantages of spring. Some of them are as follows:
+Spring provides for templates for JDBC, Hibernate, and other technologies. Thus there’s no need of writing many codes. It encapsulates the basic steps in the given technologies.
+Spring applications are coupled loosely because of interdependency.
+The Dependency Injection provided by spring makes it easier to test any application.
+Spring is lightweight in terms of size and transparency.
+The Dependency Injection feature provided by spring makes the development of Java EE application easy.
+Spring provides power abstraction to Java-like JDBC, JPA, JTA, and JMS.
+Spring also provides caching, formatting, validating and transactions.
+ 0
+Q16.
+What are the various components of a spring application?
+Posted by Sharad Jaiswal
+A spring application consists of the following components:
+Interface: The functions in spring are defined by the interface.
+Bean class: It consists of the properties, its setter-getter methods, other functions etc.
+Spring Aspect Oriented Programming (AOP): In spring AOP provides for the functionality of crosscutting concerns.
+User program: It uses the function to implement.
+ 0
+Q17.
+What are the various ways in which Spring Framework can be used?
+Posted by Sharad Jaiswal
+There are many ways in which Spring Framework can be used. They are listed as follows:
+It can be used as a full time Spring web application.
+Using Spring Frameworks middle-tier, it can be used as a third-party web framework.
+It can be used for remote usage.
+It can be used as Enterprise Java Bean which has the capability to wrap existing Plain Old Java Objects (POJO)
+ 0
+Q18.
+What do you mean by Spring IOC Container?
+Posted by Sharad Jaiswal
+At the center of the Spring Framework, lies the spring container. It is the container, which creates the object, wires them together, makes necessary changes in them and manages their entire life cycle. The spring container uses the Dependency Injection to manage the elements that the application is made up of. The container gets the instructions for which objects to assemble, instantiate and configure and by reading the modification metadata provided. This metadata is provided either by XML, Java code or Java annotations.  
+
+ 
+ 0
+Q19.
+What are the types of Dependency Injection supported by spring?
+Posted by Sharad Jaiswal
+ There is two Dependency Injection that is supported by spring.
+Setter Injection : Setter based Dependency Injection can be initialized by calling setter methods on the beans of the user after starting a no argument constructor to initialize their bean.
+Constructor Injection: Constructor based Dependency Injection is initialized by starting a constructor with a number of arguments, each working as a collaborator.
+ 0
+Q20.
+What are the differences between constructor injection and setter injection?
+Posted by Sharad Jaiswal
+The difference between Constructor Injection and Setter Injection are:
+In constructor injection, there’s no partial injection while setter injection provides for partial injection.
+Constructor injection overrides the setter property while setter injection overrides the constructor property.
+Constructor injection creates a new instance for any kind of modification while setter injection doesn’t.
+Constructor injection works better for many properties while setter injection works better for few properties.
+
+
+Spring Framework
+Spring is one of the most widely used Java EE Frameworks for building applications. For the Java platform, the Spring framework provides an elaborate programming and configuration model. It aims to simplify the Java EE development and helps developers be more productive at work. It can be used at any kind of deployment platform. It takes into account the rising needs of today’s businesses and strives to fulfill them.
+
+Unlike other frameworks, Spring focuses on several areas of an application and provides a wide range of features.
+
+One of the major features of the Spring framework is the dependency injection. It helps make things simpler by allowing us to develop loosely coupled applications.
+
+Spring Boot
+While the Spring framework focuses on providing flexibility to you, Spring Boot aims to shorten the code length and provide you with the easiest way to develop a web application. With annotation configuration and default codes, Spring Boot shortens the time involved in developing an application. It helps create a stand-alone application with less or almost zero-configuration.
+
+Autoconfiguration is a special feature in Spring Boot. It automatically configures a class based on that requirement. Let us take a quick look at some of the features and benefits of these frameworks:
+
+Benefits of the Spring Framework
+•    The Spring framework can be used for all layers of implementation in the development of an application.
+
+•    Considering its POJO model, it is a very lightweight framework.
+
+•    It allows loose coupling and easy testability.
+
+•    It supports declarative programming.
+
+•    It is capable of eliminating the formation of singleton and factory classes.
+
+•    It supports both XML and annotation configurations.
+
+•    It provides middleware services.
+
+Despite having several benefits in the Spring framework, what led to the emergence of Spring Boot?
+
+Spring Boot helps in the easy usage of the Spring Framework by simplifying it to a great extent. Spring provides a loosely coupled application — this is a great feature. However, when there are several loosely coupled blocks, keeping track of them becomes a tedious and messy task. This is where Spring Block comes into the picture and helps simplify things by offering no configuration feature. It helps you get started with minimal effort and even provides externalized configuration.
+
+Benefits of Spring Boot
+•    Spring Boot doesn’t require you to deploy WAR files.
+
+•    It creates stand-alone applications.
+
+•    It helps embed Tomcat, Jetty, or Undertow directly.
+
+•    It doesn’t require XML configuration.
+
+•    It aims to reduce the LOC.
+
+•    It offers production ready features.
+
+•    It is easier to launch.
+
+•    Easier customization and management.
+
+Therefore, Spring Boot is a Spring-based production-ready project initializer. With features like auto-configuration, it saves you from writing lengthy code and helps you avoid unnecessary configuration.
+
+While the Spring Framework offers you features like dependency injection or IOC and handles transactions, it also acts as a foundation for other Spring frameworks. The best example for this is Spring boot. Spring Boot uses the Spring Framework as a foundation and improvises on it. It simplifies Spring dependencies and runs applications straight from a command line. It also doesn’t require an application container. Spring Boot mostly helps in monitoring several components and configures them externally.
+
+All in all, the Spring framework has made a significant contribution and continues to do so. With the many features mentioned above, the Spring framework is always a great choice for developers. However, it is highly beneficial when used alongside Spring Boot. The added advantages that come with Spring Boot are of great value to the developers as they offer completion of projects with minimal efforts. To all the problems that arise from the Spring framework, Spring Boot is the solution. 

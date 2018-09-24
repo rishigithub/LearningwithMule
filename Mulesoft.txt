@@ -1,0 +1,414 @@
+1. What Is Mule ? (Mulesoft Interview Questions)
+
+Answer:
+Mule is a lightweight event-driven enterprise service bus (ESB) and an integration platform. It is a lightweight and modular solution that could scale from an application-level messaging framework to an enterprise-wide highly distributable object broker.
+
+2. What is Shared Context ?
+
+Answer:
+Shared Context: Context is a temporary area which is created along with Service Message Object (SMO) in the Mediation Flows. Shared Context is a type of context which is present in the SMO. Shared Context is mainly used when we are using Aggregation process where we need to Iterate the BO for Certain times. Shared Context maintains Aggregation data between Aggregation (FanOut and FanIn) primitives. The Content (data) which is present in the shared context BO does not persist across Request and Response flows i.e The Data in the Shared Context which is used in Request flow can not be used again in Response flow.
+
+3. What is the functionality of Fan-in and Fan-out ?
+
+Answer:
+Fan-out: We can use the Fan Out primitive to fire the output terminal once (with the input message) or to fire the output terminal multiple times. You can use Fan Out in isolation or as part of a Fan Out and Fan In combination.
+
+Fan-In: Fan In is always partnered with a Fan Out in the same flow and acts as a decision point for when to continue flow execution. It receives a number of messages until a decision point is reached, at which point the last message to be received is propagated to the output terminal. The Fan In primitive may only be used in combination with Fan Out.
+
+4. What is the Difference between SDO and SMO ?
+
+Answer:
+SDO: Service Data Object is the representation of the variable or Object.
+
+SMO: The SMO model is a pattern for using SDO Data Objects to represent messages
+
+5. Why The Name Mule ?
+
+Answer:
+There is a lot of infrastructure work to be done before we can really start thinking about implementing any logic. So this infrastructure work is regarded as “donkey work” as it needs doing for every project. A Mule is also commonly referred to as a carrier of load, moving it from one place to another. The load it specializes in moving is our enterprise information.
+
+6. What are Batch Jobs in Mule ESB ?
+
+Answer:
+A batch job is a top-level element in Mule which exists outside all Mule flows. Batch jobs split large messages into records which Mule processes asynchronously in a batch job; just as flows process messages, batch jobs process records.
+A batch job contains one or more batch steps which, in turn, contain any number of message processors that act upon records as they move through the batch job. During batch processing, you can use record-level variables (recordVars) and MEL expressions to enrich, route or otherwise act upon records.
+
+7. What are the different types of Flow Processing Strategies ?
+
+Answer:
+There are six different types of Flow Processing Strategies. They are
+
+1. Asynchronous Flow Processing Strategy.
+2. Custom Processing Strategy.
+3. Thread Per Processing Strategy.
+4. Queued Asynchronous Flow Processing Strategy.
+5. Synchronous Flow Processing Strategy.
+6. Non-blocking Flow Processing Strategy.
+7. Queued Flow Processing Strategy.
+
+8. What Are Available Esbs Apart From Mule?
+
+Answer:
+All major JEE vendors (BEA, IBM, Oracle, Sun) have an ESB in their catalog. It is unremarkably based on their middleware technologies and is usually at the core of a much broader SOA product suite. There are also some commercial ESBs that have been built by vendors not in the field of JEE application servers, like the ones from Progress Software, IONA Technologies, and Software AG.
+
+Mulesoft Interview Questions
+
+9. Why the Mulesoft is preferred than other ESB implementations ?
+
+Answer:
+Mule is lightweight but highly scalable, allowing you to start small and connect more applications over time. The ESB manages all the interactions between applications and components transparently, regardless of whether they exist in the same virtual machine or over the Internet, and regardless of the underlying transport protocol used.
+
+Several commercial ESB implementation provide limited functionality or built on top of an existing application server or messaging server, locking you into that specific vendor. Mule is vendor-neutral, so different vendor implementations can plug in to it. You are never locked in to a specific vendor when you use Mule.
+
+10. What Is Filter In Mule ?
+
+Answer:
+Filters are a powerful complement to the routers. Filters provide the brains routers need to make smart decisions about what to do with messages in transit. Some filters go as far as deeply analyzing the content of a message for a particular value on which their outcome will be based.
+
+11. What are the different types of Web services ?
+
+Answer:
+There are mainly two types of web services.
+
+SOAP web services.
+RESTful web services.
+Mule ESB Interview Questions
+
+12. What is the Difference between Stop and fail ?
+
+Answer:
+Stop: Stops a particular path in the flow, without generating an exception.
+
+Fail: Generates a failure in the flow.
+
+13. How to add classes/jars to the Mule class path ?
+
+Answer:
+Use the MULE_LIB variable (generally set in the run script)
+To include JAR file(s) in a mule class path, declare each dependent jar file in the MULE_LIB entry.
+For spring resource, if the XML bean declaration is placed within a project, include the project JAR file in the class path too (i.e., if not included, Mule will throw a **.xml not found on class path)
+
+14. What is Mule Data Integrator ?
+
+Answer:
+Mule has released a data integrator tool, it is a visual mapping tool which supports flat file, java object, XML mappings, etc. Coding complex mappings can be very tedious and additionally difficult to maintain, the mule data integrator with drag and drop facilities makes building and maintaining mappings very simple.
+
+The mapping is done in eclipse (plugins required) and executed on a data integrator runtime which sits on top of Mule ESB – this requires a license.
+
+15. Where to find the class Abstract Mule TestCase ?
+
+Answer:
+This is in 1.4/1.4.1 distributions but was missing from the 1.3.3 distribution – the class is defined in /lib/mule/mule-core-.jar.
+
+Our design of course tutorials and interview questions is practical and informative. At TekSlate, we offer resources to help you learn various IT courses. We avail both written material and demo video tutorials. For in-depth knowledge and practical experience explore.
+
+16. What are Flow Processing Strategies ?
+
+Answer:
+Flow processing strategies in Mulesoft are:
+
+Synchronous Flow Processing Strategy
+Queued Flow Processing Strategy
+Asynchronous Flow Processing Strategy
+Thread Per Processing Strategy
+Queued Asynchronous Flow Processing Strategy
+Non-blocking Flow Processing Strategy
+Custom Processing Strategy.
+
+Mulesoft Interview Questions
+
+17. Why am I getting ‘Unable to get resource from repository’ while building the Mule examples ?
+
+Answer:
+If you are getting this error message while building the Mule examples:
+
+18. How to use Mule HQ with Mule ?
+
+Answer:
+
+Mule Configuration
+Add the following code snippet to your Mule configuration:
+
+<agentname=”RMI” className=”org.mule.management.agents.RmiRegistryAgent”/>
+<agentname=”JMX” className=”org.mule.management.agents.JmxAgent”>
+<propertyname=”connectorServerUrl” value=”service:jmx:rmi:///jndi/rmi://localhost:1099/server”/> <mapname=”connectorServerProperties”> <propertyname=”jmx.remote.jndi.rebind” value=”true”/>
+
+Start your Mule instance.
+
+Ensure the HQ agent is running on the server the Mule instance is configured on and is pointing to the desired HQ server.
+
+Check the Mule HQ server page to see if information about the Mule instance is being received.
+
+19. What is a Mule UMO ?
+
+Answer:
+
+A Mule UMO is a Universal Message Object
+
+UMO is now a legacy term. What was once referred to as UMO Components are now referred to as Service Components.
+
+20. Mule won’t start? Check your Environment ?
+
+Answer:
+
+The java and mule environment variables must be setup correctly for mule to start. If you are experiencing problems check the following variables:
+
+MULE_HOME – should be the location of the mule install
+JAVA_HOME – should be the location of the JDK
+PATH – should have both JAVA_HOME\bin and MULE_HOME\bin in the path.
+Check all of the above carefully. Some systems with multiple JDK’s installed can end up with incorrect mappings between the PATH and the JAVA_HOME, which will stop mule from loading.
+
+21. Is MuleSoft open source ?
+
+Answer:
+
+MuleSoft is open source technology and it provides open source SOA middleware and related products.
+
+22. Why do we need ESB ?
+
+Answer:
+
+ESB, a middleware technology, is a Bus-like architecture used to integrate heterogeneous systems. In ESB, each application is independent and yet able to communicate with other systems. It, thus, prevents scalability issues and ensures that communication happens only through it.
+
+23. What are Web Services ?
+
+Answer:
+
+Web service is a functionality or a small piece of program in any programming language that can be accessed over HTTP. Message format can be XML or JSON or any other program as long as the other programs can understand and communicate.
+
+A Web service can be of synchronous or asynchronous type. Any web service has a server-client relationship and it can have multiple clients.
+
+24. How can we create and consume SOAP service in Mule ?
+
+Answer:
+
+Creating SOAP Service – We can create a SOAP service same as we create Mule Project With RAML, the only change is instead of RAML we need to import Concert WSDL. Consuming SOAP Service – We can use Web Service Consumer or CXF component in our mule flow to access/consume SOAP service.
+
+Mulesoft Interview Questions
+
+25. What would you consider your technical specialty ?
+
+Answer:
+
+Professional Answers Preview “Computing and Network Communications has always been a really strong area for me. I have a big interest in how network communication improves our daily lives and our overall business efficiency. I see that you are looking for team members who are experts in network communications which is what really caught my eye when I first saw your job posting.” “I have been focusing my career on becoming a cloud integration specialist although I do have cross platform app development expertise as well.”
+
+26. What is MuleSoft Anypoint platform used for ?
+
+Answer:
+
+MuleSoft’s Anypoint Platform of integration products is designed to tie together software as a service (SaaS) and on-premises software.
+
+27. What is the use of Web service ?
+
+Answer:
+
+Web services are XML-based information exchange systems that use the Internet for direct application-to-application interaction. These systems can include programs, objects, messages, or documents.
+
+28. What is Mulesoft used for ?
+
+Answer:
+
+Mulesoft is an integration platform that allows developers to connect applications together quickly and easily, enabling them to exchange data.
+
+29. Is Mulesoft a middleware ?
+
+Answer:
+
+Mule Enterprise Service Bus is a middleware technology that quickly, easily, and securely connects the enterprise. Unlike typical middleware software, Mule as an ESB is a Java-based middleware solution that is easy to use and easy to scale.
+
+30. A web service is a collection of open protocols and standards used for exchanging data between applications or systems.
+Mule ESB ?
+
+Answer:
+
+The different types of variables in Mule ESB are:
+
+Flow Variable
+Session Variable
+Record Variable
+
+31. What are the various types of Exception Handling in Mule ESB ?
+
+Answer:
+
+The types of exception handling in Mule ESB are:
+
+Default Exception Handling
+Global Exception Handling
+Catch Exception Handling
+Choice Exception Handling
+
+32. What are the advantages of Soap Web Services ?
+
+Answer:
+
+WS Security: SOAP defines its own security known as WS Security.
+
+Language and Platform independent: SOAP web services can be written in any programming language and executed in any platform.
+
+Disadvantages of Soap Web Services:
+
+Slow: SOAP uses XML format that must be parsed to be read. It defines many standards that must be followed while developing the SOAP applications. So it is slow and consumes more bandwidth and resource.
+
+WSDL dependent: SOAP uses WSDL and doesn’t have any other mechanism to discover the service.
+
+Mulesoft Interview Questions
+
+33. What are the Features of Mule ESB ?
+
+Answer:
+
+An ESB is a used for integration using a service-oriented approach. Its main features are:
+1. Set of Service Container
+2. Message Transformation Service
+3. Message Routing Service
+4. Web Service Security
+
+34. What Are Differences Between Mule And Other Commercial Esbs ?
+
+Answer:
+
+Prescriptive deployment model, whereas Mule supports a wide variety of deployment strategies. Prescriptive SOA methodology, whereas Mule can embrace the architectural style and SOA practices in place where it is deployed. Mainly focused on higher-level concerns, whereas Mule deals extensively with all the details of integration. Strict full-stack web service orientation, whereas Mule’s capacities as an integration framework open it to all sorts of other protocols. Comprehensive documentation, a subject on which MuleSource has made huge progress recently.
+
+35. What Is Connector In Mule ?
+
+Answer:
+
+A connector is in charge of controlling the usage of a particular protocol. It is configured with parameters that are specific to this protocol and holds any state that can be shared with the underlying entities in charge of the actual communications.
+
+For example: a JMS connector is configured with a Connection, which is shared by the different entities in charge of the actual communication.
+
+36. What Is Model Layer In Mule ?
+
+Answer:
+
+The first logical layer is the model layer. A Mule model represents the runtime environment that hosts services. It defines the behavior of Mule when processing requests handled by services. The model provides services with supporting features, such as exception strategies. It also provides services with default values that simplify their configuration.
+
+37. What Is Service Layer In Mule ?
+
+Answer:
+
+A Mule service is composed of all the Mule entities involved in processing particular requests in predefined manners.A service is defined by a specific configuration. This configuration determines the different elements, from the different layers of responsibility, that will be mobilized to process the requests that it will be open to receive. Depending on the type of input channel it uses, a service may or may not be publicly accessible outside of the ESB.
+
+38. Where would you like your career with Mulesoft take you ?
+
+Answer:
+
+Professional Answers Preview “One of the reasons I was so excited to interview with Mulesoft is because of the endless growth opportunities you appear to offer your high performing employees. My biggest ambition is to be awarded a management role in the next 3-5 years.” “What interests me most about your company is that there are so many options when it comes to career growth. Ideally, I would like to earn my way into a team lead role, then a division manager position in the digital management department. Eventually, a CDO (Chief Data Officer) level role would be ideal. Of course, I understand that this will take many years of dedication and hard work.”
+
+39. Have you researched Mulesoft enough to know how their internal hierarchy works? Do they have a variety of departments and management levels, offering you choices when it comes to carving out your career path ?
+
+Answer:
+
+the interviewer about your career ambitions specifically related to this role and their organization.
+
+Professional Answers Preview “There have been so many great advancements in technology this year. Recently, I was reading an article by MIT Technology Review and was amazed at the incredible advancements this year. The one that stood out most to me was the autopilot software update released by Tesla this year. We truly will have the software for vehicles to be controlled by tech rather than humans.” “The most impressive advancement in technology, in my opinion, is the continued advancement of mobile integration. Most of the modern world is connected by tech and we can do absolutely everything from our phones these days.” Display to the interviewer that you have an invested interest in the technology industry by discussing your thoughts on recent advancements. Be sure to include the ways in which you stay up to date on industry changes and new technology.
+
+40. What is the defination of Web Services ?
+
+Answer:
+
+Web service is a function or program in any language that can be accessed over HTTP. Message format can be XML or JSON or any other program as long as the other programs can understand and communicate. Any web service has server-client relationship. Web services can be synchronous or asynchronous. Any web service can have multiple clients.
+
+Mulesoft Interview Questions
+
+41. What is your understanding of this position and the responsibilities that come with it ?
+
+Answer:
+
+Professional Answers Preview “From our previous conversation, understanding the job description, and researching the role online I feel that the job is best described as a project leader focused on X, Y, and Z. The technical requirements that you would like to see are A, B, and C. I am well versed in the tasks and programs you are asking for and am confident that I meet the strict requirements to successfully perform in this role.” “My understanding is that you seek a candidate with expert level skills in X, Y, and Z, who can train junior employees.
+
+42. Do you have any questions about my technical expertise ?
+
+Answer:
+
+Assure the interviewer that you bring a full understanding of the technical requirements attached to this particular job. It is very important that you research the role and thoroughly consume the information provided in the company’s job posting / job description. Keep your answer to the point.
+
+43. What is the difference between SOAP and REST ?
+
+Answer:
+
+SOAP -> REST
+1. SOAP is a protocol. -> REST is an architectural style.
+2. SOAP stands for Simple Object Access Protocol. -> REST stands for REpresentational State Transfer.
+3. SOAP can’t use REST because it is a protocol. -> REST can use SOAP web services because it is a concept and can use any protocol like HTTP, SOAP.
+4. SOAP uses services interfaces to expose the business logic. -> REST uses URI to expose business logic.
+5. SOAP defines standards to be strictly followed. -> REST does not define too much standards like SOAP.
+6. SOAP defines standards to be strictly followed. -> REST does not define too much standards like SOAP.
+7. SOAP requires more bandwidth and resource than REST. -> REST requires less bandwidth and resource than SOAP.
+8. SOAP defines its own security. -> RESTful web services inherit security measures from the underlying transport.
+9. SOAP permits XML data format only. -> REST permits different data format such as Plain text, HTML, XML, JSON etc.
+10. SOAP is less preferred than REST. -> REST more preferred than SOAP.
+
+44. What Is Component In Mule ?
+
+Answer:
+
+Components are the centerpiece of Mule’s services. Each service is organized with a component at its core and inbound and outbound routers around it. Components are used to implement a specific behavior in a service. This behavior can be as simple as logging messages or can go as far as invoking other services. Components can also have no behavior at all; in that case they are pass-through and make the service act as a bridge between its inbound and outbound routers.
+
+45. What is SOAP Web Service ?
+
+Answer:
+
+SOAP stands for Simple Object Access Protocol. It is a XML-based protocol for accessing web services. SOAP is a W3C recommendation for communication between two applications.
+
+SOAP is XML based protocol. It is platform independent and language independent. By using SOAP, you will be able to interact with other programming language applications.
+
+46. What Is Transport Layer In Mule ?
+
+Answer:
+
+The transport layer is in charge of receiving or sending messages. This is why it is involved with both inbound and outbound communications. A transport manifests itself in the configuration by the following elements: connectors, endpoints and transformers.
+
+A transport also defines one message adapter. A message adapter is responsible for extracting all the information available in a particular request (data, meta information, attachments, and so on) and storing them in transport-agnostic fashion in a Mule message.
+
+swer :
+
+A Mule message is composed of different parts: The payload, which is the main data content carried by the message.
+
+The properties, which contain the meta information much like the header of a SOAP envelope or the properties of a JMS message. Optionally, multiple named attachments, to support the notion of multipart messages.
+
+Optionally, an exception payload, which holds any error that occurred during the processing of the event.
+
+47. How to find when the project needs ESB ?
+
+Answer:
+
+ESB implementation is not suitable for all projects. Proper analysis should be done if the use of ESB will really benefit the project.
+
+Some of the points to be considered while analyzing the need of ESB are as follows:
+>> If project requires integrating 3 or more applications/services. If the need is to communicate between two applications, using point-to-point integration would suffice.
+>> If the project would need to be scaled in future where it might be needed to interact with more services in future. Not all projects need this as they may perform not that big a task.
+>> If the project needs message routing capabilities such as forking and aggregating message flows. Such features are not required by all projects.
+>> Is the architecture of what is to be achieved clear. Its much better to do simple POCs integrating small parts to evaluate the benefits.
+>> Most ESBs are a costly affair. Does the project budget allow use of ESB.
+
+
+
+Why Mule4 ?
+Mule Message - the Mule Message structure has evolved to make it easier to work with properties and to provide more consistency across connectors.
+Expression language - the Mule Expression Language has been replaced with the DataWeave language so that you work with data and learn Mule more easily.Connectors - the approach to connectivity was unified in Mule 4. Mule 3 transports were replaced with new operation-oriented connectors that are easier to use, have better out-of-the-box defaults, and provide new advanced capabilities.
+Error Handling - easier and more powerful error handling with a new Try scope.
+DataWeave - DataWeave includes minor changes to simplify the syntax and make it easier to learn.
+Studio 7 - features a simplified palette, improved Maven integration, and many other usability improvements.
+Runtime engine - the internal execution engine has been updated with a new self-tuning and non-blocking reactive engine. This allows for better performance and scalability out-of-the-box.
+
+We need take care about 
+endpoints, 
+correct method creation for specific tasks  , 
+correct response code, 
+success category, 
+exceptions handling, 
+resources and field naming convention, 
+filtering, 
+versioning, pagination,
+Naming conventionand verbs are most important one 
+
+
+While design your API you need to follow some best practice:
+
+First you to need understand why that type of API is best for your application, and then design it.
+
+You need to consider who the API will be used by, to what actions do they need access, and then you must list out those actions. You need to explain how the API will interact with existing services, how the API will be maintained, how the API will be versioned, how it will be documented, how developers will interact with it, and how you are planning to manage support. There is a lot to consider in this stage, but careful thought now will save you time and effort later.
+
+you create a blueprint or spec for your API. 
